@@ -4,11 +4,17 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "clean": "cd android && ./gradlew clean && cd ..",
+    "clean-cache": "rm -rf $TMPDIR/react-*; rm -rf $TMPDIR/haste-*; rm -rf $TMPDIR/metro-*; watchman watch-del-all",
+    "debugHun": "npx react-native run-android --variant hunDebug --appIdSuffix hun",
+    "debugEng": "npx react-native run-android --variant engDebug --appIdSuffix eng",
+    "debugRus": "npx react-native run-android --variant rusDebug --appIdSuffix rus"
   },
   "dependencies": {
     "react": "16.5.0",
     "react-native": "0.57.2",
+    "react-native-config": "^1.2.1",
     "react-transform-hmr": "^1.0.4"
   },
   "devDependencies": {
